@@ -12,12 +12,19 @@ export default function HomeSection() {
         Hi! My name is Kier, ready to bring your ideas to reality
       </div>
       <div className=" w-full text-center">
-        <Link
-          className="text-xs sm:text-xl border-b border-[--border] pb-2"
-          href={"/contacts"}
+        <span
+          className="text-xs sm:text-xl border-b border-[--border] pb-2 cursor-pointer hover:text-[--primary]"
+          onClick={() => {
+            const section = document.getElementById("contact");
+
+            if (!section) {
+              return;
+            }
+            section.scrollIntoView({ behavior: "smooth" });
+          }}
         >
           Contact Me
-        </Link>
+        </span>
       </div>
     </section>
   );
